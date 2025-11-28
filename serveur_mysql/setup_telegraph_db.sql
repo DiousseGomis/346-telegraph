@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS db_telegraph;
 USE db_telegraph;
 

@@ -1,7 +1,7 @@
 
 async function readMessages() {
     try {
-        const response = await fetch('http://192.168.1.140:8080/api/getMessages.php');
+        const response = await fetch('https://192.168.1.140:8080/api/getMessages.php');
         if (!response.ok) {
             throw new Error('Erreur lors de la récupération des messages.');
         }
