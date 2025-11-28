@@ -1,0 +1,38 @@
+# Creation date : 22.08.2022
+# Created by : CSR
+# Description : Create three containers (one for the db, one for PHP8.3 and the last one of the administration front-end)
+# 
+
+services:
+  db:
+    image: mysql:8.0.30
+    container_name: db_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_user_pass
+    restart: always
+    ports:
+      - "6033:3306"
+    volumes:
+      - "./setup_telegraph_db.sql:/docker-entrypoint-initdb.d/1.sql"
+      - dbdata:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin:5.2.0
+    container_name: pma_container
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - "8081:80"
+      
+# The database will be persistent among containers restarts.
+volumes:
+  dbdata:
+
+
+  
