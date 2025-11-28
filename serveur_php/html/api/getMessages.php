@@ -3,10 +3,10 @@
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     header("Access-Control-Allow-Origin: *", "Content-Type: application/json");
 
-    $servername = "192.168.1.140:6033";
-    $username = "root";
-    $password = "root";
-    $dbname = "db_telegraph";
+    $servername = "common-srv-ts2.mysql.database.azure.com";
+    $username = "dbadmin";
+    $password = "PoC#2025";
+    $dbname = "telegraph_vgn";
 
     try {
         // Connexion à la base de données
