@@ -9,10 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $charAscii = $_POST['charAscii'];
         $ipSender = $_SERVER['REMOTE_ADDR'];
 
-        $servername = "192.168.1.140:6033";
-        $username = "root";
-        $password = "root";
-        $dbname = "db_telegraph";
+        $servername = "common-srv-ts2.mysql.database.azure.com";
+		$username = "dbadmin";
+		$password = "PoC#2025";
+		$dbname = "telegraph_vgn";
         $STX = 2;
         $EOT = 4;
 
